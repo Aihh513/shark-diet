@@ -1,0 +1,36 @@
+{
+  "id": "diet_plan_adjustment_ai_generate_1",
+  "pluginKey": "@official-plugins/ai-text-generate",
+  "pluginVersion": "1.0.21",
+  "name": "饮食计划调整AI生成",
+  "description": "根据用户对已生成饮食计划的修改建议，智能调整并生成新的饮食计划方案",
+  "icon": "",
+  "paramsSchema": {
+    "type": "object",
+    "properties": {
+      "original_diet_plan": {
+        "type": "string",
+        "description": "原始的饮食计划内容"
+      },
+      "user_modification_suggestions": {
+        "type": "string",
+        "description": "用户提出的饮食计划修改建议和需求"
+      }
+    },
+    "required": [
+      "original_diet_plan",
+      "user_modification_suggestions"
+    ]
+  },
+  "formValue": {
+    "prompt": "你是一位专业的营养师，擅长根据用户需求定制和调整科学合理的饮食计划。\n\n请根据以下原始饮食计划和用户的修改建议，重新调整生成新的饮食计划：\n\n原始饮食计划：\n{{input.original_diet_plan}}\n\n用户修改建议：\n{{input.user_modification_suggestions}}\n\n调整要求：\n1. 充分理解并满足用户提出的所有修改需求\n2. 保持饮食计划的营养均衡和科学合理性\n3. 结构清晰，按早、中、晚餐和加餐分别列出\n4. 每个餐品包含食材、分量、热量和营养成分说明\n5. 如有无法满足的需求，请明确说明原因并提供替代方案\n6. 语言通俗易懂，便于用户理解和执行\n\n输出格式：\n【调整后的饮食计划】\n■ 早餐：\n- 餐品1：(食材、分量、热量、营养说明)\n- 餐品2：(食材、分量、热量、营养说明)\n\n■ 午餐：\n- 餐品1：(食材、分量、热量、营养说明)\n- 餐品2：(食材、分量、热量、营养说明)\n\n■ 晚餐：\n- 餐品1：(食材、分量、热量、营养说明)\n- 餐品2：(食材、分量、热量、营养说明)\n\n■ 加餐：\n- 上午加餐：(食材、分量、热量、营养说明)\n- 下午加餐：(食材、分量、热量、营养说明)\n- 睡前加餐：(食材、分量、热量、营养说明)\n\n【营养总览】\n- 每日总热量：XXX大卡\n- 三大营养素比例：碳水化合物XX%，蛋白质XX%，脂肪XX%\n\n【调整说明】\n针对用户提出的修改建议，说明具体的调整点和调整原因\n",
+    "modelID": "2015",
+    "modelParams": {
+      "maxTokens": 8192,
+      "temperature": 0.5
+    }
+  },
+  "createdAt": 1791023355682,
+  "updatedAt": 1791023355682,
+  "createdBy": 7587548902283283647
+}

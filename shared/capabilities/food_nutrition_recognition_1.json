@@ -1,0 +1,48 @@
+{
+  "id": "food_nutrition_recognition_1",
+  "pluginKey": "@official-plugins/ai-text-to-json",
+  "pluginVersion": "1.0.26",
+  "name": "食物营养成分识别",
+  "description": "输入食物名称，自动返回每100g该食物的碳水、蛋白质、脂肪含量的结构化JSON数据，用于自定义食物表单的AI智能识别功能。",
+  "icon": "",
+  "paramsSchema": {
+    "required": [
+      "food_name"
+    ],
+    "type": "object",
+    "properties": {
+      "food_name": {
+        "type": "string",
+        "description": "要查询营养成分的食物名称"
+      }
+    }
+  },
+  "formValue": {
+    "prompt": "你是专业的营养数据专家，具备权威的食物营养成分知识库。请根据用户提供的食物名称，查询并返回该食物每100克可食用部分的营养成分数据。\n\n食物名称：{{input.food_name}}\n\n输出要求：\n1. 数值保留一位小数，单位为克\n2. 如果是多种食材混合的食物，按常规平均配方估算\n3. 如无准确数据，返回0.0并确保数值类型正确\n4. 必须严格按照指定的JSON结构输出，不要添加任何额外说明文字",
+    "jsonStructure": [
+      {
+        "name": "carbohydrate",
+        "paramDescription": "每100g食物中碳水化合物的含量，单位克，Number类型",
+        "paramType": "Number"
+      },
+      {
+        "name": "protein",
+        "paramDescription": "每100g食物中蛋白质的含量，单位克，Number类型",
+        "paramType": "Number"
+      },
+      {
+        "name": "fat",
+        "paramDescription": "每100g食物中脂肪的含量，单位克，Number类型",
+        "paramType": "Number"
+      }
+    ],
+    "modelID": "2015",
+    "modelParams": {
+      "temperature": 0.5,
+      "maxTokens": 8192
+    }
+  },
+  "createdAt": 1791019407046,
+  "updatedAt": 1791019407046,
+  "createdBy": 7587548902283283647
+}

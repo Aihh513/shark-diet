@@ -1,0 +1,19 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "vite",
+  "buildCommand": "npx vite build",
+  "outputDirectory": "dist",
+  "installCommand": "npm install --ignore-scripts",
+  "rewrites": [
+    { "source": "/api/nutrition/search", "destination": "/api/nutrition/search" },
+    { "source": "/api/nutrition/barcode", "destination": "/api/nutrition/barcode" },
+    { "source": "/api/user/params", "destination": "/api/user/params" },
+    { "source": "/api/foods", "destination": "/api/foods/index" },
+    { "source": "/api/foods/:id", "destination": "/api/foods/[id]" },
+    { "source": "/api/daily", "destination": "/api/daily" },
+    { "source": "/api/daily/mode", "destination": "/api/daily" },
+    { "source": "/api/daily/entries", "destination": "/api/daily" },
+    { "source": "/api/migrate/local", "destination": "/api/migrate/local" },
+    { "source": "/((?!api/|assets/|favicon\\.svg|icons\\.svg).*)", "destination": "/index.html" }
+  ]
+}
