@@ -7,9 +7,9 @@
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "types": [],
+    "types": ["node"],
     "strict": false,
     "noEmit": true
   },
-  "include": ["./**/*.ts", "../shared/**/*.ts", "../api/**/*.ts"]
+  "include": ["./**/*.ts"]
 }
